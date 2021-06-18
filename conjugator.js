@@ -56,8 +56,8 @@ $(document).ready(function() {
 
 
 	$(".js-example-basic-single").select2({
-  templateResult: formatVerb,
-  templateSelection: formatVerb,
+// templateResult: formatVerb,
+  //templateSelection: formatVerb,
       dir: "rtl"
 
 });
