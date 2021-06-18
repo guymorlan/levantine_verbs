@@ -7,7 +7,15 @@ var data = $.ajax({
 });
 
 
-
+function updateInfo(){
+	var info = document.getElementsByName("verb-info");
+	info[0].innerHTML = "<b>Verb: </b>" + data["responseJSON"][e.params.data.id]["verb"] + "<br>" +
+	"<b> Root: </b>" + data["responseJSON"][e.params.data.id]["root"] + "<br>" +
+	"<b> Form: </b>" + data["responseJSON"][e.params.data.id]["form"] + "<br>" +
+	"<b> Meaning: </b>" + data["responseJSON"][e.params.data.id]["english"]
+	
+	
+}
 var gridMain = new gridjs.Grid({
 	columns: ["Person", "Perfect", "Imperfect", "Bi-imperfect"], 
 	data: data["responseJSON"][0]["main"],
@@ -30,13 +38,7 @@ $('.js-example-basic-single').on('select2:select', function (e) {
 	//console.log(data[e.params.data.id])
 	gridMain.updateConfig({columns: ["Person", "Perfect", "Imperfect", "Bi-imperfect"], data: data["responseJSON"][e.params.data.id]["main"]}).forceRender();
 	gridSecond.updateConfig({columns: ["Person", "Imperative", "Person", "Active Participle"], data: data["responseJSON"][e.params.data.id]["secondary"]}).forceRender();
-	
-	var info = document.getElementsByName("verb-info");
-	info[0].innerHTML = "<b>Verb: </b>" + data["responseJSON"][e.params.data.id]["verb"] + "<br>" +
-	"<b> Root: </b>" + data["responseJSON"][e.params.data.id]["root"] + "<br>" +
-	"<b> Form: </b>" + data["responseJSON"][e.params.data.id]["form"] + "<br>" +
-	"<b> Meaning: </b>" + data["responseJSON"][e.params.data.id]["english"]
-	
+	updateInfo();
 	//.render(document.getElementById("user-table"));
 	
 	
@@ -78,6 +80,7 @@ $(document).ready(function() {
 		$('.js-example-basic-single').append(newOption).trigger('change');
 	};
 
+	updateInfo();
 	//$("select[name=verb]").change(function(){
     //alert($("select[name=verb]"));
 	//};
