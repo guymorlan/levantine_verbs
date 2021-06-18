@@ -56,7 +56,16 @@ $(document).ready(function() {
 
 
 	$(".js-example-basic-single").select2({
-		templateResult: formatVerb,
+		  escapeMarkup: function(markup) {
+    return markup;
+  },
+  templateResult: function(data) {
+    return data.html;
+  },
+  templateSelection: function(data) {
+    return data.text;
+  },
+//		templateResult: formatVerb,
   //templateSelection: formatVerb,
       dir: "rtl"
 
