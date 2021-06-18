@@ -46,7 +46,7 @@ $('.js-example-basic-single').on('select2:select', function (e) {
 
 	function formatVerb (verb) {
 
-  var $verb= $(verb  );
+  var $verb= $(verb.text);
   return $verb;
 };
 
@@ -56,7 +56,7 @@ $(document).ready(function() {
 
 
 	$(".js-example-basic-single").select2({
-// templateResult: formatVerb,
+		templateResult: formatVerb,
   //templateSelection: formatVerb,
       dir: "rtl"
 
