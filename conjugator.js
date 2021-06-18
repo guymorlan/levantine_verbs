@@ -48,21 +48,21 @@ $(document).ready(function() {
 	
 	function formatVerb (verb) {
 
-  var $verb= $(verb.text  );
+  var $verb= $(verb  );
   return $verb;
 };
 
 	$(".js-example-basic-single").select2({
   templateResult: formatVerb,
   templateSelection: formatVerb
-      //dir: "rtl"
+      dir: "rtl"
 
 });
 	
-	//for (var i = 0; i < data["responseJSON"].length; i++) {
-	for (var i = 0; i < 11; i++) {
+	for (var i = 0; i < data["responseJSON"].length; i++) {
+	//for (var i = 0; i < 11; i++) {
 
-		var newOption = new Option(data["responseJSON"][i]["id"], data["responseJSON"][i]["id"], false, false);
+		var newOption = new Option(data["responseJSON"][i]["text"], data["responseJSON"][i]["id"], false, false);
 		$('.js-example-basic-single').append(newOption).trigger('change');
 	};
 
