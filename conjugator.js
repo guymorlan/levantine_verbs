@@ -60,7 +60,7 @@ $(document).ready(function() {
 });
 	
 	for (var i = 0; i < data["responseJSON"].length; i++) {
-		var newOption = new Option(data["responseJSON"][i]["verb"], data["responseJSON"][i]["id"], false, false);
+		var newOption = new Option(data["responseJSON"][i]["english"], data["responseJSON"][i]["id"], false, false);
 		$('.js-example-basic-single').append(newOption).trigger('change');
 	};
 
