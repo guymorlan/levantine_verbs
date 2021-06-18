@@ -60,7 +60,7 @@ $(document).ready(function() {
     return markup;
   },
   templateResult: function(data) {
-    return data.html;
+    return data.text;
   },
   templateSelection: function(data) {
     return data.text;
