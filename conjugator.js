@@ -59,7 +59,9 @@ $(document).ready(function() {
 
 });
 	
-	for (var i = 0; i < data["responseJSON"].length; i++) {
+	//for (var i = 0; i < data["responseJSON"].length; i++) {
+	for (var i = 0; i < 11; i++) {
+
 		var newOption = new Option(data["responseJSON"][i]["id"], data["responseJSON"][i]["id"], false, false);
 		$('.js-example-basic-single').append(newOption).trigger('change');
 	};
