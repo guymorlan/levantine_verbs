@@ -7,12 +7,12 @@ var data = $.ajax({
 });
 
 
-function updateInfo(){
+function updateInfo(id){
 	var info = document.getElementsByName("verb-info");
-	info[0].innerHTML = "<b>Verb: </b>" + data["responseJSON"][e.params.data.id]["verb"] + "<br>" +
-	"<b> Root: </b>" + data["responseJSON"][e.params.data.id]["root"] + "<br>" +
-	"<b> Form: </b>" + data["responseJSON"][e.params.data.id]["form"] + "<br>" +
-	"<b> Meaning: </b>" + data["responseJSON"][e.params.data.id]["english"]
+	info[0].innerHTML = "<b>Verb: </b>" + data["responseJSON"][id]["verb"] + "<br>" +
+	"<b> Root: </b>" + data["responseJSON"][id]["root"] + "<br>" +
+	"<b> Form: </b>" + data["responseJSON"][id]["form"] + "<br>" +
+	"<b> Meaning: </b>" + data["responseJSON"][id]["english"]
 	
 	
 }
@@ -38,7 +38,7 @@ $('.js-example-basic-single').on('select2:select', function (e) {
 	//console.log(data[e.params.data.id])
 	gridMain.updateConfig({columns: ["Person", "Perfect", "Imperfect", "Bi-imperfect"], data: data["responseJSON"][e.params.data.id]["main"]}).forceRender();
 	gridSecond.updateConfig({columns: ["Person", "Imperative", "Person", "Active Participle"], data: data["responseJSON"][e.params.data.id]["secondary"]}).forceRender();
-	updateInfo();
+	updateInfo(e.params.data.id);
 	//.render(document.getElementById("user-table"));
 	
 	
@@ -80,7 +80,7 @@ $(document).ready(function() {
 		$('.js-example-basic-single').append(newOption).trigger('change');
 	};
 
-	updateInfo();
+	updateInfo(0);
 	//$("select[name=verb]").change(function(){
     //alert($("select[name=verb]"));
 	//};
