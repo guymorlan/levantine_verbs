@@ -43,14 +43,17 @@ $('.js-example-basic-single').on('select2:select', function (e) {
 });
 
 
-$(document).ready(function() {
-	
-	
+
 	function formatVerb (verb) {
 
   var $verb= $(verb  );
   return $verb;
 };
+
+$(document).ready(function() {
+	
+	
+
 
 	$(".js-example-basic-single").select2({
   templateResult: formatVerb,
