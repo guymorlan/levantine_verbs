@@ -1,7 +1,10 @@
 
 //var data = jQuery.getJSON("https://raw.githubusercontent.com/guymorlan/levantine_verbs/main/data.json");
 var data = $.ajax({
-  url: "https://rawcdn.githack.com/guymorlan/levantine_verbs/5300e75bb082cb0ff1c7b0c05d9aaf2da268f13d/data_1806.json",
+	 // url: "https://rawcdn.githack.com/guymorlan/levantine_verbs/f7f40850b714356e8fac6694192b9f6cdfd15797/data.json",
+	// url: "https://rawcdn.githack.com/guymorlan/levantine_verbs/c2cf6e63276c7873156d4205482d06553879c1ca/data_1906.json",
+	 //url: "https://rawcdn.githack.com/guymorlan/levantine_verbs/df24fa03aec57dea22db7c393c6b95e146a807bd/data_1906_new.json",
+	 url: "https://rawcdn.githack.com/guymorlan/levantine_verbs/5ce4afbfb155eb245b305a046567cc0220c826db/data_1906_new2.json",
   async: false,
   dataType: 'json'
 });
